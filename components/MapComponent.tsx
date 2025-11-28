@@ -20,7 +20,6 @@ export default function MapComponent({ latitude, longitude }: MapComponentProps)
         const L = await import("leaflet")
         const leaflet = L.default
 
-        // Load CSS
         const link = document.createElement("link")
         link.rel = "stylesheet"
         link.href = "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css"
@@ -29,7 +28,7 @@ export default function MapComponent({ latitude, longitude }: MapComponentProps)
         leafletRef.current = leaflet
 
         if (!map.current) {
-          map.current = leaflet.map(mapContainer.current).setView([latitude, longitude], 10)
+          map.current = leaflet.map(mapContainer.current!).setView([latitude, longitude], 10)
 
           leaflet
             .tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
@@ -41,14 +40,12 @@ export default function MapComponent({ latitude, longitude }: MapComponentProps)
           map.current.setView([latitude, longitude], 10)
         }
 
-        // Remove existing markers
         map.current.eachLayer((layer: any) => {
           if (layer instanceof leaflet.Marker) {
             map.current?.removeLayer(layer)
           }
         })
 
-        // Add marker
         leaflet
           .marker([latitude, longitude], {
             icon: leaflet.icon({

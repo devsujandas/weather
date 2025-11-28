@@ -14,8 +14,6 @@ export default function Footer() {
     >
       <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 py-6 sm:py-8">
         <div className="flex flex-col items-center justify-center text-center">
-
-          {/* Professional Copyright Line */}
           <p className="text-xs sm:text-sm text-muted-foreground font-medium">
             © {currentYear} Weather — All rights reserved.
           </p>
