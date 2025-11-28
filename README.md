@@ -17,10 +17,18 @@
 
 ## Preview
 
-![Weather Homepage](./public/images/preview1.jpg)
-![Weather Dashboard](./public/images/preview2.jpg)
+<div align="center">
+
+<img src="./public/images/preview1.jpg" width="800" alt="Weather Homepage" />
+
+<br/><br/>  <!-- Creates clean vertical gap -->
+
+<img src="./public/images/preview2.jpg" width="800" alt="Weather Dashboard" />
+
+</div>
 
 ---
+
 
 ## Overview
 
