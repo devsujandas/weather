@@ -30,7 +30,10 @@ export default function Header() {
   }, [theme, setTheme])
 
   const handleThemeChange = () => {
-    const currentTheme = theme === "dark" || (theme === "system" && systemTheme === "dark") ? "light" : "dark"
+    const currentTheme =
+      theme === "dark" || (theme === "system" && systemTheme === "dark")
+        ? "light"
+        : "dark"
     setTheme(currentTheme)
   }
 
@@ -48,30 +51,37 @@ export default function Header() {
       <motion.div
         layout
         className={`transition-all duration-300
-
-        /* Width control */
-        w-[95%]
-        ${scrolled ? "sm:w-[86%]" : "sm:w-[92%]"}
-        sm:max-w-7xl
-
-        py-1.5 rounded-2xl
-        border border-dashed border-green-500/40
-        backdrop-blur-xl bg-background/90 shadow-md
+          w-[95%] 
+          sm:max-w-7xl
+          py-1.5 rounded-2xl
+          border border-dashed border-green-500/40
+          backdrop-blur-xl bg-background/90 shadow-md
+          ${scrolled ? "sm:w-[86%]" : "sm:w-[92%]"} 
         `}
       >
         <div className="px-4 sm:px-6 flex items-center justify-between">
-          <Link href="/" className="flex items-center gap-2 hover:opacity-80 transition-opacity duration-200">
-            <motion.div
+          <Link
+            href="/"
+            className="flex items-center gap-1 hover:opacity-80 transition-opacity duration-200"
+          >
+          <motion.div
               whileHover={{ scale: 1.05, rotate: 5 }}
               whileTap={{ scale: 0.95 }}
-              className="w-9 h-9 rounded-xl bg-primary flex items-center justify-center"
+              className="w-9 h-9 flex items-center justify-center"
             >
-              <Cloud className="w-4.5 h-4.5 text-primary-foreground" />
-            </motion.div>
+            <img
+              src="/logo.png"
+              alt="Logo"
+              className="w-8 h-8 object-contain"
+            />
+          </motion.div>
+
 
             <div className="leading-tight">
-              <h1 className="font-bold text-sm sm:text-base text-foreground">Weather</h1>
-              <p className="text-[9px] text-muted-foreground">Real-time Intelligence</p>
+              <h1 className="font-bold text-sm sm:text-base text-foreground">
+                Weather
+              </h1>
+              <p className="text-[9px] text-muted-foreground">Real-Time Insights</p>
             </div>
           </Link>
 
@@ -94,7 +104,11 @@ export default function Header() {
               className="p-1.5 rounded-md bg-secondary hover:bg-secondary/80 text-secondary-foreground transition-all duration-200"
               title="Toggle theme"
             >
-              <motion.div initial={{ rotate: 0 }} animate={{ rotate: isDark ? 180 : 0 }} transition={{ duration: 0.3 }}>
+              <motion.div
+                initial={{ rotate: 0 }}
+                animate={{ rotate: isDark ? 180 : 0 }}
+                transition={{ duration: 0.3 }}
+              >
                 {isDark ? <Sun className="w-3.5 h-3.5" /> : <Moon className="w-3.5 h-3.5" />}
               </motion.div>
             </motion.button>

@@ -80,16 +80,18 @@ export default function Home() {
     >
       <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 pt-24 pb-8 sm:pb-12">
         <motion.div className="mb-10 sm:mb-14" variants={containerVariants} initial="hidden" animate="visible">
-          <motion.div className="flex items-center gap-3 mb-3" variants={itemVariants}>
-            <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }}>
-              <Cloud className="w-8 h-8 sm:w-10 sm:h-10 text-primary" />
+          <motion.div className="flex flex-col items-center text-center mb-6" variants={itemVariants}>
+            <motion.div className="flex items-center gap-3 mb-3">
+              <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }}>
+                <Cloud className="w-8 h-8 sm:w-10 sm:h-10 text-primary" />
+              </motion.div>
+              <h1 className="text-4xl sm:text-5xl font-bold text-foreground">Weather Insights</h1>
             </motion.div>
-            <h1 className="text-4xl sm:text-5xl font-bold text-foreground">Weather Intelligence</h1>
-          </motion.div>
 
-          <motion.p className="text-base sm:text-lg text-muted-foreground mb-8 sm:mb-10" variants={itemVariants}>
-            Explore real-time weather conditions and interactive maps worldwide
-          </motion.p>
+            <motion.p className="text-base sm:text-lg text-muted-foreground mb-8 sm:mb-10" variants={itemVariants}>
+              Get instant weather info and interactive maps worldwide
+            </motion.p>
+          </motion.div>
 
           <motion.div variants={itemVariants}>
             <SearchBox />
@@ -136,10 +138,19 @@ export default function Home() {
                 <span className="text-sm text-muted-foreground">Data Source</span>
                 <span className="text-base font-semibold text-primary">OpenWeather</span>
               </div>
+              <div className="flex justify-between items-center pb-4 border-b border-border">
+                <span className="text-sm text-muted-foreground">Map Provider</span>
+                <span className="text-base font-semibold text-primary">Leaflet</span>
+              </div>
+              <div className="flex justify-between items-center pb-4 border-b border-border">
+                <span className="text-sm text-muted-foreground">Units Supported</span>
+                <span className="text-base font-semibold text-primary">°C / °F</span>
+              </div>
               <div className="flex justify-between items-center">
                 <span className="text-sm text-muted-foreground">Update Rate</span>
                 <span className="text-base font-semibold text-primary">Real-time</span>
               </div>
+              
             </div>
           </motion.div>
         </motion.div>
@@ -152,7 +163,7 @@ export default function Home() {
                 <h2 className="text-2xl sm:text-3xl font-bold text-foreground">Live Map</h2>
               </div>
               <p className="text-sm sm:text-base text-muted-foreground mt-2">
-                Interactive map showing your current location with real-time positioning
+                Real-time positioning on an interactive map
               </p>
             </div>
             <div className="h-96 sm:h-[500px]">

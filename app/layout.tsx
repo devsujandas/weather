@@ -11,9 +11,9 @@ const _geist = Geist({ subsets: ["latin"] })
 const _geistMono = Geist_Mono({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "Weather & Map Platform | Professional Weather Intelligence",
+  title: "Weather & Maps | Real-Time Insights",
   description:
-    "Real-time weather data with interactive maps. Get accurate weather forecasts and location intelligence powered by OpenWeather API.",
+    "Live weather, accurate forecasts, and interactive maps worldwide.",
   authors: [{ name: "Sujan Das" }],
   icons: {
     icon: "/logo.png",
